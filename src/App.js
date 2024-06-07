@@ -1,3 +1,4 @@
+import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
 import './App.css';
 import AddStud from './Components/AddStud';
 import DeleteStud from './Components/DeleteStud';
@@ -7,13 +8,14 @@ import ViewAllStud from './Components/ViewAllStud';
 
 function App() {
   return (
-    <div>
-      <Navbar/>
-      <AddStud/>
-      <SearchStud/>
-      <DeleteStud/>
-      <ViewAllStud/>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<AddStud/>}/>
+      <Route path='/Search' element={<SearchStud/>}/>
+      <Route path='/Delete' element={<DeleteStud/>}/>
+      <Route path='/View' element={<ViewAllStud/>}/>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
